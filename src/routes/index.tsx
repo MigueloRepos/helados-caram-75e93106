@@ -22,15 +22,20 @@ function Index() {
     <Page>
       <section className="mt-5 overflow-hidden rounded-[2rem] bg-hero md:grid md:grid-cols-2 md:items-center">
         <div className="p-7 md:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Helados {BRAND.name}</p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.05] md:text-6xl">{BRAND.slogan}</h1>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/catalogo" className="btn-primary">Ver catálogo <ArrowRight className="h-4 w-4" /></Link>
-          </div>
+          <h1 className="font-display text-7xl font-extrabold tracking-tight text-primary md:text-8xl">{BRAND.name}</h1>
+          <p className="mt-1 text-lg font-semibold">{BRAND.slogan}</p>
+          <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.1] md:text-5xl">Helados que hacen la vida más dulce</h2>
+          <WhatsAppButton message="¡Hola Caram! Quiero hacer un pedido." label="Pedir ahora por WhatsApp" className="mt-6 max-w-xs" />
+          <Link to="/catalogo" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">Ver productos <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <img src={hero} alt="Helados Caram en vaso" width={1024} height={1024} className="aspect-square w-full object-cover" />
       </section>
 
+      <ul className="mt-6 grid grid-cols-3 gap-2 text-center text-xs font-semibold">
+        {["Domicilio en Puerto Padre", "Rápido y seguro", "100% artesanal"].map((t) => (
+          <li key={t} className="rounded-2xl bg-card px-2 py-3 shadow-soft">{t}</li>
+        ))}
+      </ul>
       <section className="mt-10" aria-labelledby="cat-h">
         <div className="flex items-end justify-between">
           <h2 id="cat-h" className="font-display text-2xl font-bold">Categorías</h2>

@@ -39,6 +39,6 @@ export function useCart() {
 }
 
 export function buildOrderMessage(items: CartItem[]): string {
-  const lines = items.map((i) => `• ${i.qty} x ${getProduct(i.id)?.name ?? i.id}`);
+  const lines = items.map((i) => { const p = getProduct(i.id); return p?.variant ? `• ${i.qty} x Helado — sabor ${p.variant}` : `• ${i.qty} x ${p?.name ?? i.id}`; });
   return `¡Hola Caram! Quiero hacer este pedido:\n${lines.join("\n")}\n\n¿Me confirman precio y disponibilidad?`;
 }

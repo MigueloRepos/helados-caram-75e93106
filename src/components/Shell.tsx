@@ -22,7 +22,7 @@ export function Header() {
         <Logo />
         <nav className="hidden gap-6 text-sm font-medium md:flex" aria-label="Principal">
           <Link to="/" className="nav-link" activeOptions={{ exact: true }}>Inicio</Link>
-          <Link to="/catalogo" className="nav-link" activeOptions={{ exact: true }}>Catálogo</Link>
+          <Link to="/catalogo" className="nav-link" activeOptions={{ exact: true }}>Productos</Link>
           <Link to="/categoria/$id" params={{ id: "helados" }} className="nav-link">Helados</Link>
           <Link to="/dulces" className="nav-link">Dulces</Link>
         </nav>
@@ -44,7 +44,7 @@ function BottomNav() {
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-card md:hidden" aria-label="Navegación inferior">
       <div className="mx-auto flex max-w-md">
         <Link to="/" className={item} activeOptions={{ exact: true }}><Home className="h-5 w-5" />Inicio</Link>
-        <Link to="/catalogo" className={item}><LayoutGrid className="h-5 w-5" />Catálogo</Link>
+        <Link to="/catalogo" className={item}><LayoutGrid className="h-5 w-5" />Productos</Link>
         <Link to="/categoria/$id" params={{ id: "helados" }} className={item}><IceCreamCone className="h-5 w-5" />Helados</Link>
         <Link to="/carrito" className={item}><ShoppingBag className="h-5 w-5" />Carrito{count > 0 ? ` (${count})` : ""}</Link>
       </div>
@@ -73,7 +73,7 @@ export function WhatsAppButton({ message, label = "Pedir por WhatsApp", classNam
         <button type="button" disabled className="btn-whatsapp w-full" aria-describedby="wa-note">
           <MessageCircle className="h-5 w-5" /> {label}
         </button>
-        <p id="wa-note" className="mt-2 text-center text-xs text-muted-foreground">WhatsApp aún no configurado.</p>
+        <p id="wa-note" className="mt-2 text-center text-xs text-muted-foreground">WhatsApp aún no configurado: añade el número del negocio en WHATSAPP_PHONE (archivo de configuración, formato internacional sin “+”).</p>
       </div>
     );
   return (
